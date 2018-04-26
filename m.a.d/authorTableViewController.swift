@@ -1,40 +1,36 @@
 //
-//  FindBooksTableViewController.swift
+//  authorTableViewController.swift
 //  m.a.d
 //
-//  Created by Devansh Yerpude on 2/12/18.
+//  Created by Devansh Yerpude on 4/25/18.
 //  Copyright © 2018 Devansh Yerpude. All rights reserved.
 //
 
 import UIKit
-import FirebaseDatabase
 import FirebaseStorage
+import FirebaseDatabase
 
-
-class FindBooksTableViewController: UITableViewController, UISearchResultsUpdating{
-    //creates two arrays, one for full object list, and one for shortened list as we search
-    var booksArray = [NSDictionary?]()
-    var filteredArray = [NSDictionary?]()
+class authorTableViewController: UITableViewController, UISearchResultsUpdating {
+    var books = [NSDictionary?]()
+    var filtered = [NSDictionary?]()
     var ref = Database.database().reference()
-    let searchController = UISearchController(searchResultsController:nil)
+    let searcher = UISearchController(searchResultsController:nil)
     
-    @IBOutlet weak var segmenter: UISegmentedControl!
-
     
-   //created tableView
-    @IBOutlet var bookFinder: UITableView!
+    @IBOutlet var authorSe: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ref.child("books").queryOrdered(byChild: "title").observe(.childAdded) { (snapshot) in
-            self.booksArray.append(snapshot.value as? NSDictionary)
+        ref.child("books").queryOrdered(byChild: "author").observe(.childAdded) { (snapshot) in
+            self.books.append(snapshot.value as? NSDictionary)
         }
-        print(booksArray)
-        self.bookFinder.insertRows(at: [IndexPath(row:self.booksArray.count-1,section:0)], with: UITableViewRowAnimation.automatic)
-        searchController.searchResultsUpdater = self
-        searchController.dimsBackgroundDuringPresentation = false
+        print(books)
+        self.authorSe.insertRows(at: [IndexPath(row:self.books.count-1,section:0)], with: UITableViewRowAnimation.automatic)
+        searcher.searchResultsUpdater = self
+        searcher.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
-        tableView.tableHeaderView = searchController.searchBar
+        tableView.tableHeaderView = searcher.searchBar
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -42,17 +38,6 @@ class FindBooksTableViewController: UITableViewController, UISearchResultsUpdati
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-    
-    @IBAction func segment(_ sender: UISegmentedControl) {
-        switch segmenter.selectedSegmentIndex {
-        case 1:
-            performSegue(withIdentifier: "authorSerachSeg", sender: self)
-        default:
-            break;
-        }
-        
-
-    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -64,19 +49,36 @@ class FindBooksTableViewController: UITableViewController, UISearchResultsUpdati
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-//sets number of rows to the number of books left
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        if searchController.isActive && searchController.searchBar.text != ""{
-            return filteredArray.count
+        if searcher.isActive && searcher.searchBar.text != ""{
+            return filtered.count
         }
         else{
-            return booksArray.count
+            return books.count
             
         }
     }
 
-    var imageRef: StorageReference{
+    /*
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
+
+        return cell
+    }
+    */
+
+    /*
+    // Override to support conditional editing of the table view.
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+    */
+    var refi: StorageReference{
         return Storage.storage().reference()
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -86,16 +88,16 @@ class FindBooksTableViewController: UITableViewController, UISearchResultsUpdati
         
         let book : NSDictionary
         
-        if searchController.isActive && searchController.searchBar.text != ""{
-            book = filteredArray[indexPath.row]!
+        if searcher.isActive && searcher.searchBar.text != ""{
+            book = filtered[indexPath.row]!
         }
         else {
-            book = self.booksArray[indexPath.row]!
+            book = self.books[indexPath.row]!
         }
-        cell.textLabel?.text = book["title"] as? String
-        cell.detailTextLabel?.text = book["author"] as?
+        cell.textLabel?.text = book["author"] as? String
+        cell.detailTextLabel?.text = book["title"] as?
         String
-        var download = imageRef.child((book["image"] as? String)!)
+        var download = refi.child((book["image"] as? String)!)
         var task = download.getData(maxSize: 1024*1024*12) { (data,error) in
             if let data = data {
                 let image = UIImage(data:data)
@@ -108,16 +110,6 @@ class FindBooksTableViewController: UITableViewController, UISearchResultsUpdati
         
         return cell
     }
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
     /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -158,32 +150,28 @@ class FindBooksTableViewController: UITableViewController, UISearchResultsUpdati
         dismiss(animated: true, completion: nil)
     }
     //updates results as we search
-    func updateSearchResults(for searchController : UISearchController){
-        filterContent(searchText: self.searchController.searchBar.text!)
-        }
+    func updateSearchResults(for searcher: UISearchController){
+        filterContent(searchText: self.searcher.searchBar.text!)
+    }
     //filters content as we search
     func filterContent(searchText:String){
-        self.filteredArray = self.booksArray.filter{ user in
+        self.filtered = self.books.filter{ user in
             
-            let bookName = user!["title"] as? String
+            let bookName = user!["author"] as? String
             return (bookName?.lowercased().contains(searchText.lowercased()))!
         }
         tableView.reloadData()
     }
     // transfers title for every cell inside tableView
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let indexPath = tableView.indexPathForSelectedRow{
-        let destination = segue.destination as? bookView
-        let book = booksArray[indexPath.row]
-            
+       if let indexPath = tableView.indexPathForSelectedRow{
+            let destination = segue.destination as? bookView
+            let book = books[indexPath.row]
+    
             
             destination?.bookTitle2 = (book!["title"] as? String)!
             
+        }
     }
-    }
-            
-    
-    }
-    
-    
 
+}
