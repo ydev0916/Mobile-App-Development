@@ -17,6 +17,7 @@ class FindBooksTableViewController: UITableViewController, UISearchResultsUpdati
     var filteredArray = [NSDictionary?]()
     var ref = Database.database().reference()
     let searchController = UISearchController(searchResultsController:nil)
+    var picker = "title"
     
     @IBOutlet weak var segmenter: UISegmentedControl!
 
@@ -26,7 +27,7 @@ class FindBooksTableViewController: UITableViewController, UISearchResultsUpdati
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ref.child("books").queryOrdered(byChild: "title").observe(.childAdded) { (snapshot) in
+        ref.child("books").queryOrdered(byChild: picker).observe(.childAdded) { (snapshot) in
             self.booksArray.append(snapshot.value as? NSDictionary)
         }
         print(booksArray)
@@ -45,9 +46,17 @@ class FindBooksTableViewController: UITableViewController, UISearchResultsUpdati
     
     @IBAction func segment(_ sender: UISegmentedControl) {
         switch segmenter.selectedSegmentIndex {
+        case 0:
+            picker = "title"
+            tableView.reloadData()
         case 1:
-            performSegue(withIdentifier: "authorSerachSeg", sender: self)
+            picker = "author"
+            tableView.reloadData()
+        case 2:
+            picker = "genre"
+            tableView.reloadData()
         default:
+            tableView.reloadData()
             break;
         }
         
@@ -92,9 +101,27 @@ class FindBooksTableViewController: UITableViewController, UISearchResultsUpdati
         else {
             book = self.booksArray[indexPath.row]!
         }
+        if(picker == "title"){
         cell.textLabel?.text = book["title"] as? String
         cell.detailTextLabel?.text = book["author"] as?
-        String
+            String}
+        
+        else if(picker == "author"){
+            
+            cell.textLabel?.text = book["author"] as? String
+            cell.detailTextLabel?.text = book["title"] as?
+            String}
+        
+        else{
+            cell.textLabel?.text = book["genre"] as? String
+            cell.detailTextLabel?.text = book["title"] as?
+            String}
+        
+        
+        
+        
+        
+    
         var download = imageRef.child((book["image"] as? String)!)
         var task = download.getData(maxSize: 1024*1024*12) { (data,error) in
             if let data = data {
@@ -165,7 +192,7 @@ class FindBooksTableViewController: UITableViewController, UISearchResultsUpdati
     func filterContent(searchText:String){
         self.filteredArray = self.booksArray.filter{ user in
             
-            let bookName = user!["title"] as? String
+            let bookName = user![picker] as? String
             return (bookName?.lowercased().contains(searchText.lowercased()))!
         }
         tableView.reloadData()

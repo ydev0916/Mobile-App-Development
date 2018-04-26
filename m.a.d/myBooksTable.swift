@@ -167,7 +167,7 @@ class myBooksTable: UITableViewController,UISearchResultsUpdating {
             
             
             destination?.bookTitle2 = (book!["title"] as? String)!
-            
+            tableView.reloadData()
         }
     }
 

@@ -302,6 +302,19 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="8yp-tv-UGa">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Qv5-ww-J80">
+                            <rect key="frame" x="104" y="7" width="167" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Title"/>
+                                <segment title="Author"/>
+                                <segment title="Genre"/>
+                            </segments>
+                            <connections>
+                                <action selector="segment:" destination="FwT-k2-ow1" eventType="valueChanged" id="5dc-fx-H03"/>
+                            </connections>
+                        </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" systemItem="stop" id="ZeG-4F-UKU">
                             <connections>
                                 <action selector="exit:" destination="FwT-k2-ow1" id="NHv-vS-rOE"/>
@@ -310,6 +323,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="bookFinder" destination="gSp-gd-kxe" id="Jrn-jP-pvL"/>
+                        <outlet property="segmenter" destination="Qv5-ww-J80" id="tU2-vy-PCd"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5g1-fN-VfW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -770,14 +784,6 @@
                                     <segue destination="odn-Wk-5SC" kind="presentation" id="UtF-FP-mP3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lS-2M-BbR">
-                                <rect key="frame" x="164" y="344" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="z1R-7G-0nE" kind="presentation" id="DqO-uP-jqd"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.43509414790000001" blue="0.34341776369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="aNj-7g-zH5"/>
@@ -1117,7 +1123,6 @@
         <!--Navigation Controller-->
         <scene sceneID="67i-Bd-hBh">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BDe-hu-fAo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="z1R-7G-0nE" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qGR-6S-y9r">
@@ -1129,6 +1134,7 @@
                         <segue destination="2pU-RH-Xcy" kind="relationship" relationship="rootViewController" id="qCq-x2-SLm"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BDe-hu-fAo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1304.8" y="616.64167916041981"/>
         </scene>
@@ -1144,6 +1150,6 @@
         <image name="map" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jpp-sq-oLh"/>
+        <segue reference="lwD-cY-BKF"/>
     </inferredMetricsTieBreakers>
 </document>
