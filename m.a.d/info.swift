@@ -15,11 +15,13 @@ import Social
 class info: UIViewController {
 
  @IBOutlet weak var bugText: UITextView!
-   
+   let currentDate = Date()
+  
     @IBOutlet weak var shareText: UITextView!
     @IBAction func beingTyped(_ sender: UITapGestureRecognizer) {
         
         bugText.text = ""
+        
     }
     
     @IBAction func typer(_ sender: UITapGestureRecognizer) {
@@ -38,6 +40,9 @@ class info: UIViewController {
         // Do any additional setup after loading the view.
         bugText.layer.borderColor = UIColor.white.cgColor
         bugText.layer.borderWidth = 2
+        shareText.layer.borderColor = UIColor.white.cgColor
+        shareText.layer.borderWidth = 2
+          print(currentDate)
     
     }
     //when button is pressed, sends data inside textField to database, where developer can see bug complaint

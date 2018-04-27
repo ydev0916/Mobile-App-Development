@@ -12,7 +12,6 @@
 		E29F11562030D35700F2A344 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F11552030D35700F2A344 /* ViewController.swift */; };
 		E29F11592030D35700F2A344 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E29F11572030D35700F2A344 /* Main.storyboard */; };
 		E29F115B2030D35700F2A344 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E29F115A2030D35700F2A344 /* Assets.xcassets */; };
-		E29F115E2030D35700F2A344 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E29F115C2030D35700F2A344 /* LaunchScreen.storyboard */; };
 		E29F11662030D68E00F2A344 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E29F11652030D68E00F2A344 /* GoogleService-Info.plist */; };
 		E29F116E2031212200F2A344 /* bookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F116D2031212200F2A344 /* bookView.swift */; };
 		E29F1174203124AB00F2A344 /* search.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F1173203124AB00F2A344 /* search.swift */; };
@@ -21,6 +20,9 @@
 		E29F117C20327CEE00F2A344 /* FindBooksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F117B20327CEE00F2A344 /* FindBooksTableViewController.swift */; };
 		E29F11862032AC0500F2A344 /* myBooksTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F11852032AC0400F2A344 /* myBooksTable.swift */; };
 		E2FE41462092B4D800DFFA99 /* Social.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FE41452092B4D800DFFA99 /* Social.png */; };
+		E2FE41482092CC3F00DFFA99 /* GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FE41472092CC3F00DFFA99 /* GIF.swift */; };
+		E2FE414A2092CCA300DFFA99 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FE41492092CCA300DFFA99 /* Loading.swift */; };
+		E2FE414C2092CD7400DFFA99 /* screen.gif in Resources */ = {isa = PBXBuildFile; fileRef = E2FE414B2092CD7300DFFA99 /* screen.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +44,6 @@
 		E29F11552030D35700F2A344 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E29F11582030D35700F2A344 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E29F115A2030D35700F2A344 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E29F115D2030D35700F2A344 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E29F115F2030D35700F2A344 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E29F11652030D68E00F2A344 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E29F116D2031212200F2A344 /* bookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookView.swift; sourceTree = "<group>"; };
@@ -52,6 +53,9 @@
 		E29F117B20327CEE00F2A344 /* FindBooksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindBooksTableViewController.swift; sourceTree = "<group>"; };
 		E29F11852032AC0400F2A344 /* myBooksTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myBooksTable.swift; sourceTree = "<group>"; };
 		E2FE41452092B4D800DFFA99 /* Social.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Social.png; sourceTree = "<group>"; };
+		E2FE41472092CC3F00DFFA99 /* GIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIF.swift; sourceTree = "<group>"; };
+		E2FE41492092CCA300DFFA99 /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
+		E2FE414B2092CD7300DFFA99 /* screen.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = screen.gif; sourceTree = "<group>"; };
 		E9B0FCB0692C770C698282B4 /* Pods_m_a_d.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_m_a_d.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -115,6 +119,9 @@
 			children = (
 				E2FE41452092B4D800DFFA99 /* Social.png */,
 				E29F11572030D35700F2A344 /* Main.storyboard */,
+				E2FE414B2092CD7300DFFA99 /* screen.gif */,
+				E2FE41472092CC3F00DFFA99 /* GIF.swift */,
+				E2FE41492092CCA300DFFA99 /* Loading.swift */,
 				E29F11532030D35700F2A344 /* AppDelegate.swift */,
 				E29F11552030D35700F2A344 /* ViewController.swift */,
 				E29F117B20327CEE00F2A344 /* FindBooksTableViewController.swift */,
@@ -123,10 +130,9 @@
 				E29F11772031746500F2A344 /* info.swift */,
 				E29F117920317C5300F2A344 /* hot.swift */,
 				E29F11852032AC0400F2A344 /* myBooksTable.swift */,
-				E29F115A2030D35700F2A344 /* Assets.xcassets */,
-				E29F115C2030D35700F2A344 /* LaunchScreen.storyboard */,
 				E29F115F2030D35700F2A344 /* Info.plist */,
 				E29F11652030D68E00F2A344 /* GoogleService-Info.plist */,
+				E29F115A2030D35700F2A344 /* Assets.xcassets */,
 			);
 			path = m.a.d;
 			sourceTree = "<group>";
@@ -209,7 +215,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E29F115E2030D35700F2A344 /* LaunchScreen.storyboard in Resources */,
+				E2FE414C2092CD7400DFFA99 /* screen.gif in Resources */,
 				E29F11662030D68E00F2A344 /* GoogleService-Info.plist in Resources */,
 				E29F115B2030D35700F2A344 /* Assets.xcassets in Resources */,
 				E29F11592030D35700F2A344 /* Main.storyboard in Resources */,
@@ -294,10 +300,12 @@
 			files = (
 				E29F11782031746500F2A344 /* info.swift in Sources */,
 				E29F117C20327CEE00F2A344 /* FindBooksTableViewController.swift in Sources */,
+				E2FE414A2092CCA300DFFA99 /* Loading.swift in Sources */,
 				E29F11562030D35700F2A344 /* ViewController.swift in Sources */,
 				E29F11862032AC0500F2A344 /* myBooksTable.swift in Sources */,
 				E29F1174203124AB00F2A344 /* search.swift in Sources */,
 				E29F11542030D35700F2A344 /* AppDelegate.swift in Sources */,
+				E2FE41482092CC3F00DFFA99 /* GIF.swift in Sources */,
 				E29F116E2031212200F2A344 /* bookView.swift in Sources */,
 				E29F117A20317C5300F2A344 /* hot.swift in Sources */,
 			);
@@ -312,14 +320,6 @@
 				E29F11582030D35700F2A344 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E29F115C2030D35700F2A344 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E29F115D2030D35700F2A344 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

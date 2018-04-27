@@ -51,6 +51,7 @@
                                 </state>
                                 <connections>
                                     <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Mh-F6-SoR"/>
+                                    <segue destination="T3s-LN-yUz" kind="show" identifier="loginSeg" id="UKB-tN-ptj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWy-Ur-X3g">
@@ -65,25 +66,16 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Book Image" translatesAutoresizingMaskIntoConstraints="NO" id="Iy1-tT-gAW">
-                                <rect key="frame" x="125" y="61" width="194" height="151"/>
+                                <rect key="frame" x="120" y="45" width="186" height="180"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGK-af-rga">
-                                <rect key="frame" x="33" y="28" width="309" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.43509414792060852" blue="0.34341776371002197" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="emailText" destination="UFI-HI-xHQ" id="EzJ-rl-Vvl"/>
-                        <outlet property="message" destination="JGK-af-rga" id="RS4-1R-9im"/>
                         <outlet property="passText" destination="Ius-PE-eC4" id="r0E-vn-w2J"/>
-                        <segue destination="HwV-ih-hkq" kind="show" identifier="loginSeg" id="1c4-gK-p1Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -99,6 +91,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="separatorColor" red="0.28383526209999999" green="0.90923911329999996" blue="0.83285385369999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="1" green="0.43509414790000001" blue="0.34341776369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="cTm-Cf-euz" detailTextLabel="ost-zV-lo9" style="IBUITableViewCellStyleSubtitle" id="9bO-af-R1c">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -303,7 +296,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="8yp-tv-UGa">
                         <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Qv5-ww-J80">
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Qv5-ww-J80">
                             <rect key="frame" x="104" y="7" width="167" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
@@ -772,11 +765,17 @@
                                     <segue destination="QP4-9X-vCX" kind="show" identifier="searchSeg4" id="Z7K-WO-LV9"/>
                                 </connections>
                             </button>
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Click here to search " translatesAutoresizingMaskIntoConstraints="NO" id="kJs-2c-k1x">
+                                <rect key="frame" x="16" y="72" width="343" height="56"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="1" green="0.43509414790000001" blue="0.34341776369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvP-Jb-xxb">
-                                <rect key="frame" x="111" y="77" width="152" height="54"/>
+                                <rect key="frame" x="16" y="72" width="343" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="26"/>
-                                <state key="normal" title="Search">
+                                <state key="normal">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -861,7 +860,7 @@
                                 <rect key="frame" x="-37" y="279" width="586" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Type what you want to share, here, then click the button below!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6qS-y3-ULc">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Type what you want, and share with your social media platforms!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6qS-y3-ULc">
                                 <rect key="frame" x="30" y="346" width="314" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -940,6 +939,31 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1789.5999999999999" y="-263.11844077961024"/>
+        </scene>
+        <!--Loading-->
+        <scene sceneID="rbx-J1-utB">
+            <objects>
+                <viewController id="T3s-LN-yUz" customClass="Loading" customModule="m_a_d" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QzN-5N-P6k">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6mL-DX-ey2">
+                                <rect key="frame" x="0.0" y="165" width="375" height="337"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.43509414790000001" blue="0.34341776369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Y9i-9Y-U5W"/>
+                    </view>
+                    <connections>
+                        <outlet property="GifView" destination="6mL-DX-ey2" id="YP4-ez-GeE"/>
+                        <segue destination="HwV-ih-hkq" kind="show" identifier="loadingSeg" id="Sku-lk-z20"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xD2-QV-WgW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2674.4000000000001" y="-263.11844077961024"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="lfH-bl-NLB">

@@ -111,6 +111,7 @@ class hot: UIViewController {
         let date = Date()
         let cal = Calendar.current
         
+        
         let day = cal.component(.day,from:date)
         let month = cal.component(.month, from:date)
         var day1 = String(day)
