@@ -27,7 +27,11 @@ class myBooksTable: UITableViewController,UISearchResultsUpdating {
         super.viewDidLoad()
         ref.child("books").queryOrdered(byChild: "title").observe(.childAdded) { (snapshot) in
             self.booksArray.append(snapshot.value as? NSDictionary)
-        }
+
+            }
+        
+        
+        
 //inserts array into tableView
         self.checkOut.insertRows(at: [IndexPath(row:self.booksArray.count-1,section:0)], with: UITableViewRowAnimation.automatic)
         searchController.searchResultsUpdater = self

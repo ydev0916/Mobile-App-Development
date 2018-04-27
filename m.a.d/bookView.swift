@@ -99,9 +99,10 @@ class bookView: UIViewController {
         }
             
      let ref = Database.database().reference()
-        ref.child("users").child((Auth.auth().currentUser?.uid)!).child("title").setValue(self.bookTitle2)
-            
-            
+ 
+        ref.child("users").setValue((Auth.auth().currentUser?.uid)!)
+        ref.child("users").child((Auth.auth().currentUser?.uid)!).childByAutoId().setValue(self.bookTitle2)
+        
         }
     }
     //function to reserve a book. changes state of book to reserve on server, and records the date at which it was checked out
