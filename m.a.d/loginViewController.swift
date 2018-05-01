@@ -33,8 +33,8 @@ class loginViewController: UIViewController {
             if user != nil
             {
                 //if authenticated, moves onto "my books" screen
-                self.performSegue(withIdentifier: "loginSeg", sender: self)
-            }
+                if(self.emailText != nil && self.passText != nil){self.performSegue(withIdentifier: "loginSeg", sender: self)
+                }}
             else{
                 //otherwise displays error message
                 let alert = UIAlertController(title: "Error", message: "Wrong Username or Password", preferredStyle: UIAlertControllerStyle.alert)

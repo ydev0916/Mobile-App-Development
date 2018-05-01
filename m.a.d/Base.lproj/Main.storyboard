@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IgY-Xj-Ic1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -963,7 +963,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xD2-QV-WgW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2674.4000000000001" y="-263.11844077961024"/>
+            <point key="canvasLocation" x="-1802" y="-1093"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="lfH-bl-NLB">
@@ -988,6 +988,7 @@
                         <segue destination="x54-nz-0Wu" kind="relationship" relationship="viewControllers" id="sM5-pY-kV9"/>
                         <segue destination="Tj3-OA-TJw" kind="relationship" relationship="viewControllers" id="lga-QN-YXW"/>
                         <segue destination="sD2-2g-rhb" kind="relationship" relationship="viewControllers" id="KbG-Ad-SoR"/>
+                        <segue destination="3O4-W6-frQ" kind="relationship" relationship="viewControllers" id="peq-0L-ckK"/>
                         <segue destination="Wut-k1-Rdt" kind="relationship" relationship="viewControllers" id="gDy-SA-j9f"/>
                     </connections>
                 </tabBarController>
@@ -1077,7 +1078,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Do3-RA-Hvf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1791" y="-1093"/>
+            <point key="canvasLocation" x="1790" y="-1093"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="S5H-zb-jq5">
@@ -1107,13 +1108,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="laV-yd-Pad"/>
                     </view>
-                    <navigationItem key="navigationItem" id="EMf-63-QbB"/>
+                    <navigationItem key="navigationItem" id="EMf-63-QbB">
+                        <barButtonItem key="rightBarButtonItem" title="Exit" id="Byd-wz-Bi0">
+                            <connections>
+                                <action selector="exit:" destination="uTS-C3-5tB" id="7Fm-0H-5Dr"/>
+                                <segue destination="HwV-ih-hkq" kind="show" identifier="exitSeg" id="pTr-71-Zh5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cc0-x2-tZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1790" y="643"/>
+            <point key="canvasLocation" x="4128.8000000000002" y="-263.11844077961024"/>
         </scene>
-        <!--Image View Controller-->
+        <!--Item-->
         <scene sceneID="bIp-5g-AUf">
             <objects>
                 <viewController id="mOi-1a-A7h" customClass="imageViewController" customModule="m_a_d" customModuleProvider="target" sceneMemberID="viewController">
@@ -1121,51 +1129,148 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xsG-Kj-W4Y">
-                                <rect key="frame" x="77" y="380" width="220" height="205"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Snapshot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jto-8m-C3i">
+                                <rect key="frame" x="97" y="72" width="181" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="41"/>
-                                <state key="normal" title="Button"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IoE-f1-VxN">
+                                <rect key="frame" x="41" y="278" width="292" height="204"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Login Box transparent" translatesAutoresizingMaskIntoConstraints="NO" id="faM-aT-QUU">
+                                <rect key="frame" x="92" y="466" width="252" height="167"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3s-Nq-3oy">
+                                <rect key="frame" x="116" y="490" width="142" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                <state key="normal" title="Take Picture">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePhoto:" destination="mOi-1a-A7h" eventType="touchUpInside" id="E8o-pC-LcT"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Login Box transparent" translatesAutoresizingMaskIntoConstraints="NO" id="Dsn-rw-uDf">
+                                <rect key="frame" x="92" y="516" width="252" height="167"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIF-hb-3lc">
+                                <rect key="frame" x="116" y="540" width="142" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                <state key="normal" title="Share">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onshare:" destination="mOi-1a-A7h" eventType="touchUpInside" id="ar4-Wj-XHh"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Line up your text and take a clear still picture. The text will appear below. Or click the camera button to explore!" textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0KC-JG-fb4">
+                                <rect key="frame" x="30" y="131" width="314" height="139"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Click below to edit after text appears" textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0H0-BM-UbJ">
+                                <rect key="frame" x="30" y="250" width="314" height="107"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="35" translatesAutoresizingMaskIntoConstraints="NO" id="ZfB-7f-0FC">
+                                <rect key="frame" x="303" y="76" width="41" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73B-Gs-fHO">
+                                <rect key="frame" x="303" y="76" width="48" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="move:" destination="mOi-1a-A7h" eventType="touchUpInside" id="J5r-fm-cOk"/>
+                                    <segue destination="bPV-z6-hhE" kind="presentation" identifier="visionSeg" id="iPf-iu-dfO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.43509414790000001" blue="0.34341776369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="VXh-eh-Syq"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="kCI-Jo-fSP"/>
+                    <navigationItem key="navigationItem" id="r3Q-Uj-haM"/>
+                    <connections>
+                        <outlet property="textView" destination="IoE-f1-VxN" id="a5p-xX-tGL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vNA-fp-4rq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2728.8000000000002" y="642.72863568215894"/>
+            <point key="canvasLocation" x="2438" y="-263"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="rhd-Yd-Csy">
+        <!--Snap-->
+        <scene sceneID="YIf-8t-WMg">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IgY-Xj-Ic1" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3O4-W6-frQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Snap" image="camera" selectedImage="camera" id="LnE-Nt-KFk">
+                        <color key="badgeColor" red="1" green="0.43509414790000001" blue="0.34341776369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IKR-6z-ocF">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VCJ-ub-Xfe">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="uTS-C3-5tB" kind="relationship" relationship="rootViewController" id="HbP-h8-e17"/>
+                        <segue destination="mOi-1a-A7h" kind="relationship" relationship="rootViewController" id="jVD-lJ-MiM"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="McE-8r-pJi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tc9-Do-RnV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1096.8" y="642.72863568215894"/>
+            <point key="canvasLocation" x="2514" y="-1093"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wGP-7E-Khi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bPV-z6-hhE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rIq-wg-whs">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uTS-C3-5tB" kind="relationship" relationship="rootViewController" id="P1o-Ek-13u"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bZh-oO-y1J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3189.5999999999999" y="-263.11844077961024"/>
         </scene>
     </scenes>
     <resources>
+        <image name="35" width="512" height="512"/>
         <image name="Book Image" width="724" height="766"/>
         <image name="Login Box transparent" width="2000" height="1300"/>
         <image name="Map of Library" width="1022" height="584"/>
         <image name="Search" width="25" height="25"/>
         <image name="bag" width="25" height="25"/>
         <image name="bookmark" width="25" height="25"/>
+        <image name="camera" width="25" height="25"/>
         <image name="fire" width="25" height="25"/>
         <image name="map" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jpp-sq-oLh"/>
+        <segue reference="pTr-71-Zh5"/>
+        <segue reference="mTq-G9-Bfl"/>
     </inferredMetricsTieBreakers>
 </document>

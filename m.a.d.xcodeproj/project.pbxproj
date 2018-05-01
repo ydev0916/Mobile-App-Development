@@ -13,9 +13,9 @@
 		E22EEC8C20981EFF00786A44 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22EEC8A20981EFF00786A44 /* Preview.swift */; };
 		E22EEC8D20981EFF00786A44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22EEC8B20981EFF00786A44 /* ViewController.swift */; };
 		E25BA4282098366B006104FB /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E229C7D6209817E20072A957 /* TesseractOCR.framework */; };
+		E25BA43420984A8C006104FB /* imageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BA43320984A8C006104FB /* imageViewController.swift */; };
 		E266F6BB20981AC60063F423 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = E266F6BA20981AC60063F423 /* tessdata */; };
 		E266F6BE20981AEF0063F423 /* Dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E266F6BD20981AEF0063F423 /* Dummy.m */; };
-		E29A2BB620982ABA007AEA87 /* imageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A2BB520982ABA007AEA87 /* imageViewController.swift */; };
 		E29A2BB820982B29007AEA87 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29A2BB720982B29007AEA87 /* UIKit.framework */; };
 		E29F11542030D35700F2A344 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F11532030D35700F2A344 /* AppDelegate.swift */; };
 		E29F11562030D35700F2A344 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F11552030D35700F2A344 /* loginViewController.swift */; };
@@ -54,10 +54,10 @@
 		E22EEC8120981B8D00786A44 /* Dummy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dummy.h; sourceTree = "<group>"; };
 		E22EEC8A20981EFF00786A44 /* Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		E22EEC8B20981EFF00786A44 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E25BA43320984A8C006104FB /* imageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imageViewController.swift; sourceTree = "<group>"; };
 		E266F6BA20981AC60063F423 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = m.a.d/tessdata; sourceTree = "<group>"; };
 		E266F6BC20981AEF0063F423 /* m.a.d-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "m.a.d-Bridging-Header.h"; sourceTree = "<group>"; };
 		E266F6BD20981AEF0063F423 /* Dummy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dummy.m; sourceTree = "<group>"; };
-		E29A2BB520982ABA007AEA87 /* imageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageViewController.swift; sourceTree = "<group>"; };
 		E29A2BB720982B29007AEA87 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E29F11502030D35700F2A344 /* m.a.d.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = m.a.d.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E29F11532030D35700F2A344 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -149,11 +149,11 @@
 				E2FE41452092B4D800DFFA99 /* Social.png */,
 				E2FE414B2092CD7300DFFA99 /* screen.gif */,
 				E29F11572030D35700F2A344 /* Main.storyboard */,
-				E29A2BB520982ABA007AEA87 /* imageViewController.swift */,
 				E2FE41472092CC3F00DFFA99 /* GIF.swift */,
 				E2FE41492092CCA300DFFA99 /* Loading.swift */,
 				E29F11532030D35700F2A344 /* AppDelegate.swift */,
 				E29F11552030D35700F2A344 /* loginViewController.swift */,
+				E25BA43320984A8C006104FB /* imageViewController.swift */,
 				E29F117B20327CEE00F2A344 /* FindBooksTableViewController.swift */,
 				E29F116D2031212200F2A344 /* bookView.swift */,
 				E29F1173203124AB00F2A344 /* search.swift */,
@@ -342,12 +342,12 @@
 				E2FE414A2092CCA300DFFA99 /* Loading.swift in Sources */,
 				E29F11562030D35700F2A344 /* loginViewController.swift in Sources */,
 				E29F11862032AC0500F2A344 /* myBooksTable.swift in Sources */,
+				E25BA43420984A8C006104FB /* imageViewController.swift in Sources */,
 				E266F6BE20981AEF0063F423 /* Dummy.m in Sources */,
 				E29F1174203124AB00F2A344 /* search.swift in Sources */,
 				E29F11542030D35700F2A344 /* AppDelegate.swift in Sources */,
 				E22EEC8D20981EFF00786A44 /* ViewController.swift in Sources */,
 				E2FE41482092CC3F00DFFA99 /* GIF.swift in Sources */,
-				E29A2BB620982ABA007AEA87 /* imageViewController.swift in Sources */,
 				E29F116E2031212200F2A344 /* bookView.swift in Sources */,
 				E22EEC8C20981EFF00786A44 /* Preview.swift in Sources */,
 				E29F117A20317C5300F2A344 /* hot.swift in Sources */,

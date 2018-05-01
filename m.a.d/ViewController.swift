@@ -23,6 +23,13 @@ override func viewDidLoad() {
         configureCamera()
     }
 }
+    
+    @IBAction func exit(_ sender: Any) {
+        performSegue(withIdentifier: "exitSeg", sender: self)
+    }
+    
+    
+    
 
 override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
