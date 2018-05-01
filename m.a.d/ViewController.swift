@@ -28,6 +28,7 @@ class ViewController: UIViewController {
    //action if button is pressed
     @IBAction func login(_ sender: UIButton) {
         //authenticates email & password from stored ones in database
+        if(emailText != nil && passText != nil){
         Auth.auth().signIn(withEmail: emailText.text!, password: passText.text!) { (user, error) in
             if user != nil
             {
@@ -45,8 +46,10 @@ class ViewController: UIViewController {
         }
         
     }
+    }
     //creates a user/pass on server, and then displays a message telling the user to log in.
     @IBAction func createAcc(_ sender: UIButton) {
+        if(emailText != nil && passText != nil){
         Auth.auth().createUser(withEmail: emailText.text!, password: passText.text!) { (user, error) in
             let alert = UIAlertController(title: "Success!", message: "You have created an account", preferredStyle: UIAlertControllerStyle.alert)
             
@@ -57,6 +60,7 @@ class ViewController: UIViewController {
         }
         
         
+    }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
