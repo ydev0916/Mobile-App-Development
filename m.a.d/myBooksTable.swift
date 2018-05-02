@@ -102,8 +102,8 @@ class myBooksTable: UITableViewController,UISearchResultsUpdating {
             }}
         
         else {
-            cell.textLabel?.text = "Add Book"
-            cell.detailTextLabel?.text = "Click here to add a book to your bag"
+            cell.textLabel?.text = "+"
+            cell.detailTextLabel?.text = "Add book"
         }
         
         

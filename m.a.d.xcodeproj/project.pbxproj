@@ -14,6 +14,8 @@
 		E22EEC8D20981EFF00786A44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22EEC8B20981EFF00786A44 /* ViewController.swift */; };
 		E25BA4282098366B006104FB /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E229C7D6209817E20072A957 /* TesseractOCR.framework */; };
 		E25BA43420984A8C006104FB /* imageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BA43320984A8C006104FB /* imageViewController.swift */; };
+		E25BA4372098EB3F006104FB /* mapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BA4362098EB3F006104FB /* mapViewController.swift */; };
+		E25BA43920991938006104FB /* calendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BA43820991938006104FB /* calendarViewController.swift */; };
 		E266F6BB20981AC60063F423 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = E266F6BA20981AC60063F423 /* tessdata */; };
 		E266F6BE20981AEF0063F423 /* Dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E266F6BD20981AEF0063F423 /* Dummy.m */; };
 		E29A2BB820982B29007AEA87 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29A2BB720982B29007AEA87 /* UIKit.framework */; };
@@ -55,6 +57,8 @@
 		E22EEC8A20981EFF00786A44 /* Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		E22EEC8B20981EFF00786A44 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E25BA43320984A8C006104FB /* imageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imageViewController.swift; sourceTree = "<group>"; };
+		E25BA4362098EB3F006104FB /* mapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapViewController.swift; sourceTree = "<group>"; };
+		E25BA43820991938006104FB /* calendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calendarViewController.swift; sourceTree = "<group>"; };
 		E266F6BA20981AC60063F423 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = m.a.d/tessdata; sourceTree = "<group>"; };
 		E266F6BC20981AEF0063F423 /* m.a.d-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "m.a.d-Bridging-Header.h"; sourceTree = "<group>"; };
 		E266F6BD20981AEF0063F423 /* Dummy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dummy.m; sourceTree = "<group>"; };
@@ -149,6 +153,8 @@
 				E2FE41452092B4D800DFFA99 /* Social.png */,
 				E2FE414B2092CD7300DFFA99 /* screen.gif */,
 				E29F11572030D35700F2A344 /* Main.storyboard */,
+				E25BA43820991938006104FB /* calendarViewController.swift */,
+				E25BA4362098EB3F006104FB /* mapViewController.swift */,
 				E2FE41472092CC3F00DFFA99 /* GIF.swift */,
 				E2FE41492092CCA300DFFA99 /* Loading.swift */,
 				E29F11532030D35700F2A344 /* AppDelegate.swift */,
@@ -337,12 +343,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E25BA43920991938006104FB /* calendarViewController.swift in Sources */,
 				E29F11782031746500F2A344 /* info.swift in Sources */,
 				E29F117C20327CEE00F2A344 /* FindBooksTableViewController.swift in Sources */,
 				E2FE414A2092CCA300DFFA99 /* Loading.swift in Sources */,
 				E29F11562030D35700F2A344 /* loginViewController.swift in Sources */,
 				E29F11862032AC0500F2A344 /* myBooksTable.swift in Sources */,
 				E25BA43420984A8C006104FB /* imageViewController.swift in Sources */,
+				E25BA4372098EB3F006104FB /* mapViewController.swift in Sources */,
 				E266F6BE20981AEF0063F423 /* Dummy.m in Sources */,
 				E29F1174203124AB00F2A344 /* search.swift in Sources */,
 				E29F11542030D35700F2A344 /* AppDelegate.swift in Sources */,

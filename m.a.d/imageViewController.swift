@@ -13,15 +13,19 @@ class imageViewController: UIViewController, UIImagePickerControllerDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        textView.layer.borderColor = UIColor.white.cgColor
+        textView.layer.borderWidth = 2
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    @IBAction func move(_ sender: Any) {
-        performSegue(withIdentifier: "visionSeg", sender: self)
+   
+    
+    
+  
     }
     
     @IBAction func onshare(_ sender: Any) {
@@ -57,7 +61,16 @@ class imageViewController: UIViewController, UIImagePickerControllerDelegate, UI
             textView.text = tesseract.recognizedText
         }
     }
+    override func touchesBegan(_ touches:Set<UITouch>, with event: UIEvent?){
+        self.view.endEditing(true)
+    }
     
+    func text(_textView:UITextView)->Bool{
+        textView.resignFirstResponder()
+        
+        return(true)
+        
+    }
     
 }
 extension UIImage {
@@ -80,7 +93,10 @@ extension UIImage {
         
         return scaledImage
     }
+    
 }
+
+
 
 
 

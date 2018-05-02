@@ -20,6 +20,7 @@ class FindBooksTableViewController: UITableViewController, UISearchResultsUpdati
     var picker = "title"
     
     @IBOutlet weak var segmenter: UISegmentedControl!
+ 
 
     
    //created tableView
@@ -202,7 +203,7 @@ class FindBooksTableViewController: UITableViewController, UISearchResultsUpdati
         if let indexPath = tableView.indexPathForSelectedRow{
         let destination = segue.destination as? bookView
         let book = booksArray[indexPath.row]
-            
+        
             
             destination?.bookTitle2 = (book!["title"] as? String)!
             
