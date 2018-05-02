@@ -13,5 +13,5 @@ pod 'Firebase/Storage'
 pod 'Firebase/Auth'
 pod 'Firebase/RemoteConfig'
 pod 'FBSDKLoginKit'
-
+pod 'PopupDialog', '~> 0.7'
 end
