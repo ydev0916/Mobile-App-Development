@@ -49,7 +49,7 @@ class info: UIViewController {
     @IBAction func entry(_ sender: Any) {
     
     
-    Database.database().reference().child("bugs").childByAutoId().setValue(["description": bugText!])
+    Database.database().reference().child("ew").child("description").setValue(bugText.text)
 
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

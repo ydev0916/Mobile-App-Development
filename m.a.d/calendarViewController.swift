@@ -9,18 +9,21 @@ import Firebase
 import FirebaseStorage
 import UIKit
 import FirebaseDatabase
-
+import EventKit
+import EventKitUI
 
 class calendarViewController: UIViewController {
 var event = "event1"
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         getValues()
         
         imageStuff.layer.borderColor = UIColor.white.cgColor
         imageStuff.layer.borderWidth = 2
+        
+        
     }
-    
     
     override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
@@ -32,8 +35,29 @@ var event = "event1"
     @IBOutlet var dateText: UILabel!
     @IBOutlet var locationText: UILabel!
     @IBOutlet var descriptionText: UILabel!
+    var year = 2018
+    var day = 05
+    var month = 10
+    var someDate = Date()
     
-   
+    func date(){
+    var dateComponents = DateComponents()
+    dateComponents.year = year
+    dateComponents.month = month
+    dateComponents.day = day
+    // Create date from components
+    let userCalendar = Calendar.current // user calendar
+    let someDateTime = userCalendar.date(from: dateComponents)
+        someDate = someDateTime!
+        
+    }
+    
+    
+    
+  
+    
+    
+    
     
     @IBAction func segmenter(_ sender: UISegmentedControl) {
         switch segment.selectedSegmentIndex {
@@ -57,7 +81,10 @@ func getValues(){
     }
     let ref = Database.database().reference()
     if(event == "amazing"){
-        var downloadRef = imageRef.child("event2.jpg")
+        day = 28
+        month = 8
+        year = 2018
+        var downloadRef = imageRef.child("event1.jpg")
         var downloadTask = downloadRef.getData(maxSize: 1024*1024*12) { (data, error) in
             if let data = data {
                 let image = UIImage(data:data)
@@ -66,7 +93,10 @@ func getValues(){
         }
     }
     else{
-        var downloadRef = imageRef.child("event1.jpg")
+        day = 16
+        month = 7
+        year = 2018
+        var downloadRef = imageRef.child("event2.jpg")
         var downloadTask = downloadRef.getData(maxSize: 1024*1024*12) { (data, error) in
             if let data = data {
                 let image = UIImage(data:data)
@@ -103,10 +133,15 @@ func getValues(){
     
    
     
-
+        
     
-    }}
+    }
+    
+    
+    
+}
     
   
+
 
 

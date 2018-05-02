@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sD2-2g-rhb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -825,7 +825,6 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="entry:" destination="8mF-9F-94m" eventType="touchUpInside" id="Vai-jU-EqT"/>
                                     <segue destination="QP4-9X-vCX" kind="show" identifier="searchSeg1" id="lwD-cY-BKF"/>
                                 </connections>
                             </button>
@@ -837,7 +836,6 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="entry:" destination="8mF-9F-94m" eventType="touchUpInside" id="Uey-Uy-MoW"/>
                                     <segue destination="QP4-9X-vCX" kind="show" identifier="searchSeg2" id="nQ3-zK-39u"/>
                                 </connections>
                             </button>
@@ -849,7 +847,6 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="entry:" destination="8mF-9F-94m" eventType="touchUpInside" id="wRs-7U-8DX"/>
                                     <segue destination="QP4-9X-vCX" kind="show" identifier="searchSeg3" id="La3-WD-psm"/>
                                 </connections>
                             </button>
@@ -861,7 +858,6 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="entry:" destination="8mF-9F-94m" eventType="touchUpInside" id="ZdE-vg-u2a"/>
                                     <segue destination="QP4-9X-vCX" kind="show" identifier="searchSeg4" id="Z7K-WO-LV9"/>
                                 </connections>
                             </button>
@@ -879,7 +875,6 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="entry:" destination="8mF-9F-94m" eventType="touchUpInside" id="RD7-2B-KSo"/>
                                     <segue destination="odn-Wk-5SC" kind="presentation" id="UtF-FP-mP3"/>
                                 </connections>
                             </button>
@@ -946,7 +941,7 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="entry:" destination="8mF-9F-94m" eventType="touchUpInside" id="kYM-S7-FCA"/>
+                                    <action selector="entry:" destination="8mF-9F-94m" eventType="touchUpInside" id="IHW-bI-xiS"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nbw-oq-tds">
@@ -1268,7 +1263,7 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="642-Oj-8Wd">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="642-Oj-8Wd">
                                 <rect key="frame" x="14" y="448" width="345" height="94"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>

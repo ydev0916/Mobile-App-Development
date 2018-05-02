@@ -1,9 +1,9 @@
 //
 //  ViewController.swift
-//  SceneTextRecognitioniOS
 //
-//  Created by Khurram Shehzad on 09/08/2017.
-//  Copyright © 2017 devcrew. All rights reserved.
+//
+//  Created by Devansh Yerpude on 04/30/18.
+//  Copyright © 2018 Devansh Yerpude. All rights reserved.
 //
 
 import AVFoundation
