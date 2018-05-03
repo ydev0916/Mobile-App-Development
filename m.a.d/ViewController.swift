@@ -35,13 +35,15 @@ override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
 }
+    //detects any "boxes"
 private func configureTextDetection() {
     textDetectionRequest = VNDetectTextRectanglesRequest(completionHandler: handleDetection)
     textDetectionRequest?.reportCharacterBoxes = true
 }
+    //configures camera
 private func configureCamera() {
     cameraView.session = session
-    
+    //sets up so that the back camera is used, since front camera doesn't have a high enough resolution
     let cameraDevices = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back)
     var cameraDevice: AVCaptureDevice?
     for device in cameraDevices.devices {
@@ -60,6 +62,7 @@ private func configureCamera() {
         print("Error occured \(error)")
         return
     }
+    //starts the video feed to work with
     session.sessionPreset = .high
     let videoDataOutput = AVCaptureVideoDataOutput()
     videoDataOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "Buffer Queue", qos: .userInteractive, attributes: .concurrent, autoreleaseFrequency: .inherit, target: nil))
@@ -69,6 +72,7 @@ private func configureCamera() {
     cameraView.videoPreviewLayer.videoGravity = .resize
     session.startRunning()
 }
+    //handles after text has been detected
 private func handleDetection(request: VNRequest, error: Error?) {
     
     guard let detectionResults = request.results else {
@@ -95,7 +99,7 @@ private func handleDetection(request: VNRequest, error: Error?) {
         let viewWidth = self.view.frame.size.width
         let viewHeight = self.view.frame.size.height
         for result in textResults {
-
+//takes detected text and puts a box around it, not yet putting text in the field.
             if let textResult = result {
                 
                 let layer = CALayer()
@@ -116,6 +120,8 @@ private func handleDetection(request: VNRequest, error: Error?) {
 private var cameraView: CameraView {
     return view as! CameraView
 }
+    
+    //figures out authorization (privacy settings) for camera
 private func isAuthorized() -> Bool {
     let authorizationStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
     switch authorizationStatus {
@@ -179,6 +185,7 @@ func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBu
             yMin = min(yMin, rect.bottomRight.y)
             yMax = max(yMax, rect.topRight.y)
         }
+        //creates smaller and smaller images within the live video stream so that text is easy to handle. 
         let imageRect = CGRect(x: xMin * size.width, y: yMin * size.height, width: (xMax - xMin) * size.width, height: (yMax - yMin) * size.height)
         let context = CIContext(options: nil)
         guard let cgImage = context.createCGImage(ciImage, from: imageRect) else {
@@ -191,6 +198,7 @@ func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBu
             continue
         }
         text = text.trimmingCharacters(in: CharacterSet.newlines)
+        
         if !text.isEmpty {
             let x = xMin
             let y = 1 - yMax
@@ -212,6 +220,7 @@ func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBu
                 layer.removeFromSuperlayer()
             }
         }
+        //takes array of recognized text and puts it into the boxes
         for tuple in recognizedTextPositionTuples {
             let textLayer = CATextLayer()
             

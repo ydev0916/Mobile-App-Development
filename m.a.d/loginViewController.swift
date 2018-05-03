@@ -10,69 +10,105 @@ import UIKit
 // Imports Authentication & Database management for Firebase
 import FirebaseAuth
 import FirebaseDatabase
+import PopupDialog
 
 
 class loginViewController: UIViewController {
     //basic function to load view
  
     override func viewDidLoad() {
-    }
-//creates objects for the email & password textfields, and the warning label.
-    @IBOutlet weak var emailText: UITextField!
+        super.viewDidLoad() }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()    }
+    //sets up local variables
+    @IBOutlet var email: UITextField!
+    @IBOutlet var password: UITextField!
+    var title1 = ""
+    var description1 = ""
+    var image = #imageLiteral(resourceName: "sorry")
     
-    @IBOutlet weak var message: UILabel!
     
     
-    @IBOutlet weak var passText: UITextField!
-    
-   //action if button is pressed
+    //login if authenticated from firebase, otherwise displays error message NIL ENTRY PREVENTION included
     @IBAction func login(_ sender: UIButton) {
-        //authenticates email & password from stored ones in database
-        if(emailText != nil && passText != nil){
-        Auth.auth().signIn(withEmail: emailText.text!, password: passText.text!) { (user, error) in
-            if user != nil
-            {
-                //if authenticated, moves onto "my books" screen
-                if(self.emailText != nil && self.passText != nil){self.performSegue(withIdentifier: "loginSeg", sender: self)
-                }}
-            else{
-                //otherwise displays error message
-                let alert = UIAlertController(title: "Error", message: "Wrong Username or Password", preferredStyle: UIAlertControllerStyle.alert)
+        if(email.text != "" && password.text != ""){
+             print(email.text, password.text)
+            Auth.auth().signIn(withEmail: email.text!, password: password.text!) { (user, error) in
+                if user != nil {
+                    self.performSegue(withIdentifier: "loginSeg", sender: self)
+                }
                 
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                else{
+                    self.title1 = "Error"
+                    self.description1 = "You have entered the wrong username or password. Please try again. If you've forgotten your password, please send an email to us at: iLibrary@nhs.org"
+                    self.image = #imageLiteral(resourceName: "sorry")
+                    self.showImageDialog(animated: true)
+                    
+                }
                 
-                self.present(alert, animated: true, completion: nil)
             }
+            
         }
         
     }
-    }
-    //creates a user/pass on server, and then displays a message telling the user to log in.
+    //creates account on firebase, and allows user to login with that same created account
+    
     @IBAction func createAcc(_ sender: UIButton) {
-        if(emailText != nil && passText != nil){
-        Auth.auth().createUser(withEmail: emailText.text!, password: passText.text!) { (user, error) in
-            let alert = UIAlertController(title: "Success!", message: "You have created an account", preferredStyle: UIAlertControllerStyle.alert)
+        if(email.text != "" && password.text != ""){
             
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            Auth.auth().createUser(withEmail: email.text!, password: password.text!) { (user, error) in
+                
+                if user != nil {
+                    
+                    self.title1 = "Success"
+                    self.description1 = "You have succesfully created an account! Please login to to continue"
+                    self.image = #imageLiteral(resourceName: "success")
+                    self.showImageDialog(animated: true)
+                    
+                }
+            }
+           
+        }
+        
+    }
+    
+    //setup popup function 
+    func showImageDialog(animated: Bool = true) {
+        
+        // Prepare the popup assets
+        let title = self.title1
+        let message = self.description1
+        let image = self.image
+        
+        // Create the dialog
+        let popup = PopupDialog(title: title, message: message, image: image, preferredWidth: 580)
+        
+        // Create first button
+        let buttonOne = DefaultButton(title: "OK") { [weak self] in
             
-            self.present(alert, animated: true, completion: nil)
-          
         }
         
         
-    }
+        // Add buttons to dialog
+        popup.addButtons([buttonOne])
+        
+        // Present dialog
+        self.present(popup, animated: animated, completion: nil)
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
+
+override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    self.view.endEditing(true)
     
-    }
-    
-    func texty(_emailText: UITextField, passText: UITextField) -> Bool
-    {
-        emailText.resignFirstResponder()
-        passText.resignFirstResponder()
-        return true
-    }
 }
+
+func texty(_ email:UITextField, _ password:UITextField) -> Bool {
+    email.resignFirstResponder()
+    password.resignFirstResponder()
+    return(true)
+}
+    
+}
+
+
 

@@ -17,6 +17,7 @@ class FindBooksTableViewController: UITableViewController, UISearchResultsUpdati
     var filteredArray = [NSDictionary?]()
     var ref = Database.database().reference()
     let searchController = UISearchController(searchResultsController:nil)
+    //changes search paramater var
     var picker = "title"
     
     @IBOutlet weak var segmenter: UISegmentedControl!
@@ -44,7 +45,7 @@ class FindBooksTableViewController: UITableViewController, UISearchResultsUpdati
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-    
+    //depending on what user selects, changes search parameters
     @IBAction func segment(_ sender: UISegmentedControl) {
         switch segmenter.selectedSegmentIndex {
         case 0:

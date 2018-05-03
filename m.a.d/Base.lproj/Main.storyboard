@@ -50,8 +50,7 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Mh-F6-SoR"/>
-                                    <segue destination="T3s-LN-yUz" kind="show" identifier="loginSeg" id="UKB-tN-ptj"/>
+                                    <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kwH-7O-g1G"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWy-Ur-X3g">
@@ -62,7 +61,7 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="createAcc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R5f-c4-DO0"/>
+                                    <action selector="createAcc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0e8-Pj-eOu"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Book Image" translatesAutoresizingMaskIntoConstraints="NO" id="Iy1-tT-gAW">
@@ -74,8 +73,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="emailText" destination="UFI-HI-xHQ" id="EzJ-rl-Vvl"/>
-                        <outlet property="passText" destination="Ius-PE-eC4" id="r0E-vn-w2J"/>
+                        <outlet property="email" destination="UFI-HI-xHQ" id="a7J-Vj-Zly"/>
+                        <outlet property="password" destination="Ius-PE-eC4" id="qZb-8K-9aU"/>
+                        <segue destination="T3s-LN-yUz" kind="show" identifier="loginSeg" id="efv-9h-cgj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1447,6 +1447,6 @@
         <image name="video" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lwD-cY-BKF"/>
+        <segue reference="jpp-sq-oLh"/>
     </inferredMetricsTieBreakers>
 </document>

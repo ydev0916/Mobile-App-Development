@@ -12,6 +12,8 @@ import ImageIO
 
 extension UIImageView {
     
+    //load gif from file
+    
     public func loadGif(name: String) {
         DispatchQueue.global().async {
             let image = UIImage.gif(name: name)
@@ -35,6 +37,8 @@ extension UIImageView {
 
 extension UIImage {
     
+    //converts gif info to UIImage
+    
     public class func gif(data: Data) -> UIImage? {
         // Create source from data
         guard let source = CGImageSourceCreateWithData(data as CFData, nil) else {
@@ -45,6 +49,8 @@ extension UIImage {
         return UIImage.animatedImageWithSource(source)
     }
     
+    
+    //protects against errors not finding gif
     public class func gif(url: String) -> UIImage? {
         // Validate URL
         guard let bundleURL = URL(string: url) else {
@@ -60,6 +66,8 @@ extension UIImage {
         
         return gif(data: imageData)
     }
+    
+    
     
     public class func gif(name: String) -> UIImage? {
         // Check for existance of gif
@@ -88,7 +96,7 @@ extension UIImage {
         
         return gif(data: dataAsset.data)
     }
-    
+    //sets delay for going through each image in gif
     internal class func delayForImageAtIndex(_ index: Int, source: CGImageSource!) -> Double {
         var delay = 0.001
         
@@ -213,7 +221,7 @@ extension UIImage {
             }
         }
         
-        // Heyhey
+        // final product setup
         let animation = UIImage.animatedImage(with: frames,
                                               duration: Double(duration) / 1000.0)
         

@@ -10,6 +10,7 @@ import UIKit
 import FirebaseDatabase
 import FirebaseAuth
 import FirebaseStorage
+import PopupDialog
 
 class bookView: UIViewController {
     //creates data reference
@@ -25,6 +26,10 @@ class bookView: UIViewController {
     var imageRef:StorageReference{
         return Storage.storage().reference()
     }
+    var title1 = ""
+    var desc = ""
+    var image1 = #imageLiteral(resourceName: "success")
+    var date1 = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,58 +49,69 @@ class bookView: UIViewController {
      ref.child("books").child(bookTitle2).child("status").observeSingleEvent(of: .value) { (snapshot) in
             let m = snapshot.value as?String
             if(m?.elementsEqual("Checked In"))!{
-                let alert = UIAlertController(title: "Success!", message: "You have checked out " + self.bookTitle2 + ". Please exit and reopen the app to see it in your bag", preferredStyle: UIAlertControllerStyle.alert)
+                self.title1 = "Success!"
                 
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                 
-                self.present(alert, animated: true, completion: nil)
+          
                 ref.child("books").child(self.bookTitle2).child("status").setValue("Checked Out")
                  ref.child("books").child(self.bookTitle2).child("user").setValue(Auth.auth().currentUser?.uid)
                 
                 if(month==1){
                     ref.child("books").child(self.bookTitle2).child("date").setValue("January " + day1)
+                    self.date1 = "January " + day1
                 }
                 else if(month==2){
                     ref.child("books").child(self.bookTitle2).child("date").setValue("February " + day1)
+                    self.date1 = "February " + day1
                 }
                 else if(month==3){
                     ref.child("books").child(self.bookTitle2).child("date").setValue("March " + day1)
+                    self.date1 = "March " + day1
                 }
                 else if(month==4){
                     ref.child("books").child(self.bookTitle2).child("date").setValue("April " + day1)
+                    self.date1 = "April " + day1
                 }
                 else if(month==5){
                     ref.child("books").child(self.bookTitle2).child("date").setValue("May " + day1)
+                    self.date1 = "May " + day1
                 }
                 else if(month==6){
                     ref.child("books").child(self.bookTitle2).child("date").setValue("June " + day1)
+                    self.date1 = "June " + day1
                 }
                 else if(month==7){
                     ref.child("books").child(self.bookTitle2).child("date").setValue("July " + day1)
+                    self.date1 = "July " + day1
                 }
                 else if(month==8){
                     ref.child("books").child(self.bookTitle2).child("date").setValue("August " + day1)
+                    self.date1 = "August " + day1
                 }
                 else if(month==9){
                     ref.child("books").child(self.bookTitle2).child("date").setValue("September " + day1)
+                    self.date1 = "September " + day1
                 }
                 else if(month==10){
                     ref.child("books").child(self.bookTitle2).child("date").setValue("October " + day1)
+                    self.date1 = "October " + day1
                 }
                 else if(month==11){
                     ref.child("books").child(self.bookTitle2).child("date").setValue("November " + day1)
+                    self.date1 = "November " + day1
                 }
                 else {
                     ref.child("books").child(self.bookTitle2).child("date").setValue("December " + day1)
+                    self.date1 = "December " + day1
                 }
+                self.desc = " Congratulations! You have succesfully checked out " + self.bookTitle2 + ". Remember that it will be due two weeks from today's date, \(self.date1)."
+                self.showImageDialog(animated: true)
                 
             }
             else{
-                let alert = UIAlertController(title: "Error", message: "This book is currently unavailable. Please reserve it instead", preferredStyle: UIAlertControllerStyle.alert)
-                
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                
-                self.present(alert, animated: true, completion: nil)
+                self.title1 = "Error"
+                self.desc = "Unfortunately, " + self.bookTitle2 + " has been checked out. Please try looking for another book."
+                self.showImageDialog(animated: true)
         }
             
      let ref = Database.database().reference()
@@ -116,50 +132,14 @@ class bookView: UIViewController {
 
         
         let day1 = String(day)
-
-        if(month==1){
-            ref.child("books").child(self.bookTitle2).child("date").setValue("January " + day1)
-        }
-        else if(month==2){
-            ref.child("books").child(self.bookTitle2).child("date").setValue("February " + day1)
-        }
-        else if(month==3){
-            ref.child("books").child(self.bookTitle2).child("date").setValue("March " + day1)
-        }
-        else if(month==4){
-            ref.child("books").child(self.bookTitle2).child("date").setValue("April " + day1)
-        }
-        else if(month==5){
-            ref.child("books").child(self.bookTitle2).child("date").setValue("May " + day1)
-        }
-        else if(month==6){
-            ref.child("books").child(self.bookTitle2).child("date").setValue("June " + day1)
-        }
-        else if(month==7){
-            ref.child("books").child(self.bookTitle2).child("date").setValue("July " + day1)
-        }
-        else if(month==8){
-            ref.child("books").child(self.bookTitle2).child("date").setValue("August " + day1)
-        }
-        else if(month==9){
-            ref.child("books").child(self.bookTitle2).child("date").setValue("September " + day1)
-        }
-        else if(month==10){
-            ref.child("books").child(self.bookTitle2).child("date").setValue("October " + day1)
-        }
-        else if(month==11){
-            ref.child("books").child(self.bookTitle2).child("date").setValue("November " + day1)
-        }
-        else {
-            ref.child("books").child(self.bookTitle2).child("date").setValue("December " + day1)
-        }
+        ref.child("books").child(self.bookTitle2).child("date").setValue(self.date1
+        )
+        
         ref.child("books").child(self.bookTitle2).child("status").setValue("Reserved")
         
-        let alert = UIAlertController(title: "Success!", message: "You have reserved " + bookTitle2, preferredStyle: UIAlertControllerStyle.alert)
-        
-        alert.addAction(UIAlertAction(title: "Awesome!", style: UIAlertActionStyle.default, handler: nil))
-        
-        self.present(alert, animated: true, completion: nil)
+        title1 = "Success"
+        desc = "You have succesfully reserved " + self.bookTitle2 + " We'll send you an email once it's ready!"
+        showImageDialog(animated: true)
         
         
     }
@@ -175,6 +155,7 @@ class bookView: UIViewController {
                 if let data = data {
                     let image = UIImage(data:data)
                     self.bookPic.image = image
+                    self.image1 = image!
                 }
             }
             
@@ -212,6 +193,28 @@ class bookView: UIViewController {
     
     
     
+    func showImageDialog(animated: Bool = true) {
+        
+        // Prepare the popup assets
+        let title = self.title1
+        let message = self.desc
+        let image = self.image1
+        
+        // Create the dialog
+        let popup = PopupDialog(title: title, message: message, image: image, preferredWidth: 580)
+        
+        // Create first button
+        let buttonOne = DefaultButton(title: "OK") { [weak self] in
+            
+        }
+        
+        
+        // Add buttons to dialog
+        popup.addButtons([buttonOne])
+        
+        // Present dialog
+        self.present(popup, animated: animated, completion: nil)
+    }
     
     
     

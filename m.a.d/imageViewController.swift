@@ -7,7 +7,7 @@
 //
 import UIKit
 
-
+//sets up Snapshot Page
 class imageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     override func viewDidLoad() {
@@ -27,6 +27,7 @@ class imageViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
   
     }
+    //share with social medai found on phone
     
     @IBAction func onshare(_ sender: Any) {
         let activity = UIActivityViewController(activityItems: [textView.text!, #imageLiteral(resourceName: "Social.png")], applicationActivities: nil)
@@ -35,6 +36,7 @@ class imageViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     @IBOutlet var textView: UITextView!
     @IBAction func takePhoto(_ sender: AnyObject) {
+        //takes photo from inbuilt photo function, saves it and calls recognition function
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
@@ -52,15 +54,16 @@ class imageViewController: UIViewController, UIImagePickerControllerDelegate, UI
         picker.dismiss(animated: true, completion: nil)
 }
     func performImageRecognition(_ image: UIImage) {
-        
+        //sets language to english
         if let tesseract = G8Tesseract(language: "eng") {
-            tesseract.engineMode = .tesseractCubeCombined
-            tesseract.pageSegmentationMode = .auto
-            tesseract.image = image.g8_blackAndWhite()
-            tesseract.recognize()
-            textView.text = tesseract.recognizedText
+            tesseract.engineMode = .tesseractCubeCombined //sets engine to use for recognition
+            tesseract.pageSegmentationMode = .auto //automatically segments the image
+            tesseract.image = image.g8_blackAndWhite() //greyscale for better detection
+            tesseract.recognize() //calls engine and recognizes text
+            textView.text = tesseract.recognizedText //displays text in textfield
         }
     }
+    //if clicking outside of entry box, makes keyboard dissappear
     override func touchesBegan(_ touches:Set<UITouch>, with event: UIEvent?){
         self.view.endEditing(true)
     }
@@ -74,6 +77,7 @@ class imageViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
 }
 extension UIImage {
+    //scale image function which scales image to the proper size for recognition
     func scaleImage(_ maxDimension: CGFloat) -> UIImage? {
         
         var scaledSize = CGSize(width: maxDimension, height: maxDimension)

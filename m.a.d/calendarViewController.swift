@@ -5,6 +5,7 @@
 //  Created by Devansh Yerpude on 5/1/18.
 //  Copyright © 2018 Devansh Yerpude. All rights reserved.
 //
+// import firebase, and event kit for possible calendar usage
 import Firebase
 import FirebaseStorage
 import UIKit
@@ -13,6 +14,8 @@ import EventKit
 import EventKitUI
 
 class calendarViewController: UIViewController {
+    
+    //variable to determine which event to use, default event1
 var event = "event1"
   
     override func viewDidLoad() {
@@ -29,15 +32,19 @@ var event = "event1"
     super.didReceiveMemoryWarning()
     }
      var ref: DatabaseReference!
+    
+    //link to storyboard
     @IBOutlet var imageStuff: UIImageView!
     @IBOutlet var titleText: UILabel!
     @IBOutlet var segment: UISegmentedControl!
     @IBOutlet var dateText: UILabel!
     @IBOutlet var locationText: UILabel!
     @IBOutlet var descriptionText: UILabel!
-    var year = 2018
-    var day = 05
-    var month = 10
+    
+    
+    /*var year = 0
+    var day = 0
+    var month = 0
     var someDate = Date()
     
     func date(){
@@ -49,14 +56,13 @@ var event = "event1"
     let userCalendar = Calendar.current // user calendar
     let someDateTime = userCalendar.date(from: dateComponents)
         someDate = someDateTime!
-        
-    }
-    
+ 
+    } */
     
     
   
     
-    
+    //changes the event displayed and updates valued
     
     
     @IBAction func segmenter(_ sender: UISegmentedControl) {
@@ -74,16 +80,14 @@ var event = "event1"
     }
         
     
-
+// gets info about both events
 func getValues(){
     var imageRef:StorageReference{
         return Storage.storage().reference()
     }
     let ref = Database.database().reference()
     if(event == "amazing"){
-        day = 28
-        month = 8
-        year = 2018
+        
         var downloadRef = imageRef.child("event1.jpg")
         var downloadTask = downloadRef.getData(maxSize: 1024*1024*12) { (data, error) in
             if let data = data {
@@ -93,9 +97,7 @@ func getValues(){
         }
     }
     else{
-        day = 16
-        month = 7
-        year = 2018
+       
         var downloadRef = imageRef.child("event2.jpg")
         var downloadTask = downloadRef.getData(maxSize: 1024*1024*12) { (data, error) in
             if let data = data {
@@ -104,7 +106,7 @@ func getValues(){
             }
         }
     }
-    
+    //firebase retrieval
     
     ref.child("bugs").child(event).child("details").observeSingleEvent(of: .value) { (snapshot) in
         let m = snapshot.value as?String

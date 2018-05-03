@@ -27,7 +27,7 @@ class info: UIViewController {
     @IBAction func typer(_ sender: UITapGestureRecognizer) {
         shareText.text = ""
     }
-    
+    //send our logo and whatever text is in the field to whichever app user chooses, direct integration for any app that user has installed
     @IBAction func onshare(_ sender: Any) {
         let activity = UIActivityViewController(activityItems: [shareText.text!, #imageLiteral(resourceName: "Social.png")], applicationActivities: nil)
         present(activity, animated: true, completion: nil)
@@ -63,12 +63,12 @@ class info: UIViewController {
         return(true)
     }
     
-    
+    //redirects to mail app to email us
     @IBAction func email(_ sender: Any) {
         UIApplication.shared.open(URL(string: "mailto:iLibrary@nhs.org")! as URL, options: [:], completionHandler: nil)
         
     }
-    
+    // redirects to website
     @IBAction func website(_ sender: Any) {
         if let url = URL(string: "https://nhsilibrary.weebly.com") {
             UIApplication.shared.open(url, options: [:])
