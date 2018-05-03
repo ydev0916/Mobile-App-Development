@@ -62,7 +62,7 @@ class loginViewController: UIViewController {
                     
                     self.title1 = "Success"
                     self.description1 = "You have succesfully created an account! Please login to to continue"
-                    self.image = #imageLiteral(resourceName: "success")
+                    self.image = #imageLiteral(resourceName: "SUCCESS-1")
                     self.showImageDialog(animated: true)
                     
                 }

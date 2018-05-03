@@ -28,7 +28,7 @@ class bookView: UIViewController {
     }
     var title1 = ""
     var desc = ""
-    var image1 = #imageLiteral(resourceName: "success")
+    var image1 = #imageLiteral(resourceName: "SUCCESS-1")
     var date1 = ""
     
     override func viewDidLoad() {
