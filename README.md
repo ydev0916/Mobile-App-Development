@@ -6,7 +6,7 @@ Instructions After Download
 
 1) Open "Mobile-App-Development-master" (folder) and navigate to then open the folder "m.a.d"
 2) In this folder, search for a file called "GoogleService-Info.plist", and double click it to open it in XCode. 
-3) Where it says "BUNDLE_ID", to the find "com.devansh.m.a.d". Double click on this, and edit it to be some random, unique string in a similiar format. For example: com.gafblatesting1.testing. Copy this text and save it for later setup use. 
+3) Where it says "BUNDLE_ID", to the left find the string of text starting with "com." Double click on this, and edit it to be some random, unique string in a similiar format. For example: com.gafblatesting2.testing. Copy this text and save it for later setup use. 
 4) After saving the file, close out of it, and exit the "m.a.d" folder. Back in the "Mobile-App-Development-master" folder, you should see a file called "m.a.d.xcworkspace". Double click this file to open it within XCode. After opening Xcode, you should see, on the left most column, "m.a.d" and "pods". Click "m.a.d" once, and you should see a settings page open to "General" 
 5) In the field "Bundle Identifier, replace the text there with whatever text you used in Step 3. 
 6) Now head down towards the "Signing" section, and where it says "Team", click and scroll down and click "Add Team". This should open up a new window where you are prompted to enter an Apple ID. We have pre-created one with an email as [iLibrarynhs@gmail.com] and password [iLibrarygafbla1]. 
