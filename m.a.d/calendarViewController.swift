@@ -42,22 +42,24 @@ var event = "event1"
     @IBOutlet var descriptionText: UILabel!
     
     
-    /*var year = 0
-    var day = 0
-    var month = 0
+    var year = 6
+    var day = 6
+    var month = 1
     var someDate = Date()
+    var hours = 1
     
     func date(){
     var dateComponents = DateComponents()
     dateComponents.year = year
     dateComponents.month = month
     dateComponents.day = day
+        dateComponents.hour = hours
     // Create date from components
     let userCalendar = Calendar.current // user calendar
     let someDateTime = userCalendar.date(from: dateComponents)
         someDate = someDateTime!
  
-    } */
+    }
     
     
   
@@ -70,9 +72,21 @@ var event = "event1"
         case 0:
             event = "awesome"
             getValues()
+            year = 2018
+            day = 8
+            month = 8
+            hours = 4
+            date()
+            
+            
         case 1:
            event = "amazing"
             getValues()
+            year = 2018
+            day = 7
+            month = 17
+           hours = 1
+            date()
         default:
            getValues()
             break;
@@ -139,8 +153,29 @@ func getValues(){
     
     }
     
+    @IBAction func addEvent(_ sender: UIButton) {
+        
+        
+        
+        
+        open(scheme: "calshow://")
+    }
     
-    
+    //sets up transition to the calander app
+    func open(scheme: String) {
+        if let url = URL(string: scheme) {
+            if #available(iOS 10, *) {
+                UIApplication.shared.open(url, options: [:],
+                                          completionHandler: {
+                                            (success) in
+                                            print("Open \(scheme): \(success)")
+                })
+            } else {
+                let success = UIApplication.shared.openURL(url)
+                print("Open \(scheme): \(success)")
+            }
+        }
+    }
 }
     
   
