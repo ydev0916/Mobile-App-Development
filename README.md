@@ -1,6 +1,6 @@
 # iLibrary - A Personalized Library Management System
 
-## 2018 FBLA Mobile App Development || Georgia FBLA || Devansh Yerpude & Anish Ganga
+## 2018 FBLA Mobile App Development || GA FBLA || Devansh Yerpude & Anish Ganga
 
 ### Instructions After Download
 
@@ -20,5 +20,7 @@
 ## App Features
 
 ### Login
+
+Through the use of Firebase Authentication, our app is able to create and store new users 
 
 
