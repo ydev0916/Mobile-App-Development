@@ -1,6 +1,6 @@
-# iLibrary - An Adaptable, Personal Library Management System
+# iLibrary - A Personalized Library Management System
 
-## 2018 FBLA Mobile App Development Project || Northview High School || Devansh Yerpude & Anish Ganga
+## 2018 FBLA Mobile App Development || Georgia FBLA || Devansh Yerpude & Anish Ganga
 
 ### Instructions After Download
 
@@ -16,4 +16,9 @@
 10) On your phone, go to Settings, and scroll down to General, and under "Device and Profile Management", trust "iLibrary". After you do this, you can now run the app. 
 11) To login, the preset credentials are [ga@fbla.org] and password [testing].
 12) Remember to be connected to the internet to run the app, without Internet access, you won't have access to many of the app's features. 
+
+## App Features
+
+### Login
+
 
