@@ -1,6 +1,8 @@
-# iLibrary - The Right Way to Library Management
+# iLibrary - A Revolutionzed Library Management System
 
-## 2018 FBLA M.A.D || GA FBLA || Devansh Yerpude & Anish Ganga
+## 2018 FBLA Mobile Application Development, NLC
+
+## Authors: Devansh Yerpude & Anish Ganga
 
 ### Instructions After Download
 
