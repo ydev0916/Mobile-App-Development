@@ -1,8 +1,8 @@
-#iLibrary - An Adaptable, Personal Library Management System
+# iLibrary - An Adaptable, Personal Library Management System
 
-2018 FBLA Mobile App Development Project || Northview High School || Devansh Yerpude & Anish Ganga
+## 2018 FBLA Mobile App Development Project || Northview High School || Devansh Yerpude & Anish Ganga
 
-Instructions After Download
+### Instructions After Download
 
 1) Open "Mobile-App-Development-master" (folder) and navigate to then open the folder "m.a.d"
 2) In this folder, search for a file called "GoogleService-Info.plist", and double click it to open it in XCode. 
