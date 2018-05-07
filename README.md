@@ -6,9 +6,10 @@
 
 ## App Features
 
-*Robust Login Page
-  *Create accounts & login to prexisting ones
-  *Cloud authentication
+Markup : * Bullet list
+              * Nested bullet
+                  * Sub-nested bullet etc
+          * Bullet list item 2
 
 ### Instructions After Download
 
