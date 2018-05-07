@@ -6,8 +6,30 @@
 
 ## App Features
 
-* Bullet List
-    * bullet list
+* **Strong text Simple, Vibrant User Interface**
+    * Integrated tabs system for easy access to key features
+    * Error handling on all pages
+    * Creative popups featuring diverse images    
+* **Strong text Robust Login Page**
+    * Login & Create Accounts, Cloud Authentication
+* **Strong text Simple Checkout/Reserve System** 
+    * Checkout, reserve, and get information for books all in one page
+    * Data is stored per user in the Cloud
+    * Easy access to your books across multiple devices
+* **Strong text Adaptive Search**
+    * Search through books based on title, author, and genre
+    * Filters books as users type, enabling more convenient searching
+* **Strong text User Friendly**
+    * Easily add events to calendar, send emails, or visit our website
+    * View a map of Northview's library, and through pop-ups, explore each genre in more detail
+* **Strong text Integrated Socaial Media/Bug Reporting**
+    * Users can directly report bugs from within the app to developers
+    * Integrated social media and graphic allows user to share app logo and thoughts on any platform
+    * Easy access from Snapshot page ensures that transcribed text can easily be used
+* **Strong text Innovative Snapshot & Live Text Pages**
+    * Easily transcribe text from books to your phone 
+    * Live recognition for hard to read texts
+
 
 ### Instructions After Download
 
