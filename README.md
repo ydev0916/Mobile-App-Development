@@ -6,10 +6,8 @@
 
 ## App Features
 
-Markup : * Bullet list
-              * Nested bullet
-                  * Sub-nested bullet etc
-          * Bullet list item 2
+  *Hello
+    *helo
 
 ### Instructions After Download
 
