@@ -6,7 +6,9 @@
 
 ## App Features
 
-*Hello
+*Robust Login Page
+  *Create accounts & login to prexisting ones
+  *Cloud authentication
 
 ### Instructions After Download
 
