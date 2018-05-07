@@ -6,8 +6,8 @@
 
 ## App Features
 
-  *Hello
-    *helo
+* Bullet List
+    * bullet list
 
 ### Instructions After Download
 
