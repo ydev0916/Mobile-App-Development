@@ -1,4 +1,4 @@
-# iLibrary - A Revolutionzed Library Management System
+# iLibrary - A Revolutionary, New Library Management System
 
 ## 2018 FBLA Mobile Application Development, NLC
 
@@ -31,7 +31,7 @@
     * Live text recognition for hard to read 
 
 
-### Instructions After Download
+## Instructions After Download
 
 1) Open "Mobile-App-Development-master" (folder) and navigate to then open the folder "m.a.d"
 2) In this folder, search for a file called "GoogleService-Info.plist", and double click it to open it in XCode. 
