@@ -9,7 +9,8 @@
 * **Simple, Vibrant User Interface**
     * Integrated tabs system for easy access to key features
     * Error handling on all pages
-    * Creative popups featuring diverse images    
+    * Creative popups featuring diverse images
+    * Integrated graphics and branding through app
 * **Robust Login Page**
     * Login & Create Accounts, Cloud Authentication
 * **Intuitive Checkout/Reserve System** 
